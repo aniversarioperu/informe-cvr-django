@@ -1,5 +1,7 @@
 {% extends 'informe/base.html' %}
 
 {% block content %}
+  <h1>{{ object.title }}</h1>
+
   {{ object.body_html|safe }}
 {% endblock content %}
