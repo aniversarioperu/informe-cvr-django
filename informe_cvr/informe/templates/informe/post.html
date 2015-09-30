@@ -1,3 +1,5 @@
-{{ object.title }}
+{% extends 'informe/base.html' %}
 
-{{ object.body_html|safe }}
+{% block content %}
+  {{ object.body_html|safe }}
+{% endblock content %}
