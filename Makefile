@@ -7,3 +7,11 @@ serve:
 
 admin:
 	python informe_cvr/manage.py createsuperuser
+
+test:
+	rm -rf htmlcov .coverage
+	coverage run --source informe_cvr informe_cvr/manage.py test -v 2 informe
+
+coverage: test
+	coverage report -m
+	coverage html
