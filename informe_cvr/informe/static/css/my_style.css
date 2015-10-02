@@ -1,13 +1,19 @@
-.nav-sidebar li.active > a, .nav-sidebar li > a:hover {
+.nav-sidebar li.active > a,
+.nav-sidebar li > a:hover {
     border-color: #dfd7ca;
 }
-.nav-sidebar > li.active > a, .nav-sidebar > li.active > a:hover, .nav-sidebar > li.active > a:focus {
+
+.nav-sidebar > li.active > a,
+.nav-sidebar > li.active > a:hover,
+.nav-sidebar > li.active > a:focus {
     color: #98978b;
     background-color: #f8f5f0;
 }
+
 .nav-sidebar li > a {
     border: 1px solid transparent;
 }
+
 .nav-sidebar > li > a {
     border-radius: 4px;
 }
