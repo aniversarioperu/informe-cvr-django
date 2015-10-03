@@ -2,6 +2,7 @@ import re
 
 from django.http import Http404
 from django.shortcuts import redirect
+from django.shortcuts import render
 from django.views import generic
 from django.views.generic.base import TemplateView
 
@@ -22,6 +23,11 @@ def search(request):
         return redirect('entry_detail', slug=matched_entry.slug, anchor=query)
 
 
-class EntryDetail(generic.DetailView):
-    model = Entry
+def entry(request, slug, anchor=None):
+    try:
+        result = Entry.objects.get(slug=slug)
+    except Entry.DoesNotExist:
+        raise Http404('esa entrada no existe')
+
     template_name = "informe/post.html"
+    return render(request, template_name, {'result': result})
