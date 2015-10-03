@@ -15,3 +15,6 @@ test:
 coverage: test
 	coverage report -m
 	coverage html
+
+index:
+	python informe_cvr/manage.py rebuild_index --noinput
