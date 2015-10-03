@@ -30,7 +30,6 @@ def entry(request, slug, anchor=None):
         raise Http404('esa entrada no existe')
 
     if anchor:
-        print(anchor)
         result.body_html = re.sub(anchor, '<span class="highlight">{0}</span>'.format(anchor),
                                   result.body_html, flags=re.I)
     template_name = "informe/post.html"
