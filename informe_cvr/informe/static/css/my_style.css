@@ -17,3 +17,9 @@
 .nav-sidebar > li > a {
     border-radius: 4px;
 }
+
+.highlight {
+    background: #a9a5fd; color:#000;
+    box-shadow:5px 0 0 #5d97fd, -5px 0 0 #5d97fd;
+    padding: 5px 0;
+}
