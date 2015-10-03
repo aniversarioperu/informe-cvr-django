@@ -18,7 +18,8 @@ def search(request):
     sqs = form.search()
     if sqs:
         matched_entry = sqs[0].object
-        return redirect('entry_detail', slug=matched_entry.slug)
+        query = re.sub('/$', '', request.GET['q'])
+        return redirect('entry_detail', slug=matched_entry.slug, anchor=query)
 
 
 class EntryDetail(generic.DetailView):

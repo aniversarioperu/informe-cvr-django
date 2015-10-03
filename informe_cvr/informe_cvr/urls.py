@@ -22,7 +22,9 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^markdown/', include('django_markdown.urls')),
     url(r'^search/$', views.search, name='search'),
-    #url(r'^search/(?P<query>\S+)/$', views.search, name='search'),
+
+    url(r'^(?P<slug>\S+)/(?P<anchor>\S+)/$', views.EntryDetail.as_view(), name='entry_detail'),
     url(r'^(?P<slug>\S+)/$', views.EntryDetail.as_view(), name='entry_detail'),
+
     url(r'^$', views.Index.as_view(), name='index'),
 ]
