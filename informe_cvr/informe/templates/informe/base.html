@@ -138,21 +138,8 @@ email: yoni@aniversariperu.me
   {% block additional_javascript_footer %}
   {% endblock additional_javascript_footer %}
 
-   <!-- this highlights current tab in navegation bar -->
-    <script>
-        $(document).ready(function() {
-            var pathname = window.location.pathname;
+  <script src="{% static 'js/active_sidebar_tab.js' %}"></script>
 
-            $(".nav a").each(function(index, value) {
-                if (pathname == $(this).attr('href'))
-                    $(this).parent().addClass("active");
-            });
-
-            if(pathname == "/") {
-                $("#index").addClass("active");
-            }
-        });
-    </script>
 
 
 </body>
