@@ -3,7 +3,6 @@ import re
 from django.http import Http404
 from django.shortcuts import redirect
 from django.shortcuts import render
-from django.views import generic
 from django.views.generic.base import TemplateView
 
 from .models import Entry
