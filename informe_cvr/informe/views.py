@@ -30,7 +30,8 @@ def entry(request, slug, anchor=None):
         raise Http404('esa entrada no existe')
 
     if anchor:
-        result.body_html = re.sub(anchor, '<span class="highlight">{0}</span>'.format(anchor),
-                                  result.body_html, flags=re.I)
+        pattern = re.compile(anchor.replace(' ', '\s*\n*'), flags=re.I)
+        result.body_html = re.sub(pattern, '<span class="highlight">{0}</span>'.format(anchor),
+                                  result.body_html)
     template_name = "informe/post.html"
     return render(request, template_name, {'result': result})
